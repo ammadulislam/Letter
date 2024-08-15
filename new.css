@@ -1,0 +1,179 @@
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+}
+
+.animation-box {
+  width: 75%;
+  height: 70rem;
+  background-color: rgb(0, 0, 0);
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.first-text, .second-text, .third-text, .fourth-text, .fifth-text, .sixth-text {
+  position: absolute;
+  opacity: 0;
+  z-index: 10;
+}
+
+.first-text {
+  font-size: 4.4rem;
+  left: 2.5rem;
+  top: 5rem;
+  animation-name: topFadeOut;
+  animation-duration: 20s;
+  animation-delay: 0s; /* Start immediately */
+  color: white;
+}
+
+.second-text {
+  font-size: 3.4rem;
+  top: 8.5rem;
+  animation-name: rightFadeInOut;
+  animation-duration: 20s;
+  animation-delay: 15s; /* Delay to start after the first one */
+  color: #ccc;
+}
+
+.third-text {
+  transform: rotate(-90deg);
+  font-size: 2rem;
+  left: 45%;
+  top: 45%;
+  animation-name: topFadeOutVertical;
+  animation-duration: 20s;
+  animation-delay: 25s; /* Delay to start after the second one */
+  color: #a3ddf0;
+  white-space: nowrap;
+}
+
+.fourth-text {
+  font-size: 3.4rem;
+  top: 10.5rem;
+  left: 10%;
+  animation-name: fadeInOut;
+  animation-duration: 20s;
+  animation-delay: 40s; /* Delay to start after the third one */
+  color: #f0a3be;
+}
+
+.fifth-text {
+  font-size: 5rem;
+  left: 5%;
+  
+  bottom: 50%;
+  animation-name: bottomFadeOut;
+  animation-duration: 25s;
+  animation-delay: 60s; /* Delay to start after the fourth one */
+  color: #f0eba3;
+}
+
+.sixth-text {
+  font-size: 4.4rem;
+  left: 2.5rem;
+  top: -10rem; /* Start position above the viewport */
+  animation-name: bottomToTop;
+  animation-duration: 20s;
+  animation-delay: 80s; /* Delay to start after the fifth one */
+  color: white;
+  z-index: 15; /* Ensuring it’s in front of other elements */
+}
+
+@keyframes topFadeOut {
+  0% {
+      top: -3rem;
+      opacity: 0;
+  }
+  75% {
+      top: 25%;
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes bottomFadeOut {
+  0% {
+      bottom: -5rem;
+      opacity: 0;
+  }
+  75% {
+      bottom: 25%;
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes topFadeOutVertical {
+  0% {
+      top: -3rem;
+      opacity: 0;
+  }
+  75% {
+      top: 45%;
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes rightFadeInOut {
+  0% {
+      right: -3rem;
+      opacity: 0;
+  }
+  75% {
+      right: 15%;
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+  }
+  40% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes leftFadeInOut {
+  0% {
+      left: -3rem;
+      opacity: 0;
+  }
+  75% {
+      left: 2.5rem;
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes bottomToTop {
+  0% {
+      top: 100%; /* Start from bottom */
+      opacity: 0;
+  }
+  50% {
+      top: 25%; /* Move up */
+      opacity: 1;
+  }
+  100% {
+      top: 5%; /* End position */
+      opacity: 0;
+  }
+}
